@@ -1,6 +1,7 @@
 import click
 
 from tool import __version__
+from tool.custom_decorators import add_version
 
 
 @click.group()
@@ -8,6 +9,7 @@ from tool import __version__
     __version__, "-V", "--version", message="%(prog)s, version %(version)s"
 )
 @click.pass_context
+@add_version
 def cli(ctx):
     """
     Welcome to the Help Page of tool.
